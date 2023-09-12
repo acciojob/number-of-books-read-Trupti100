@@ -1,38 +1,26 @@
-function numberOfBooksRead(library) {
-  // Initialize a count variable to keep track of the number of read books.
-  let count = 0;
+const players = ["John", "Bob", "Alice", "Poppy"];
+const person = {
+  name: "John Doe",
+  age: 80,
+};
 
-  // Loop through each book in the library array.
-  for (let i = 0; i < library.length; i++) {
-    // Check if the readingStatus of the current book is true.
-    if (library[i].readingStatus === true) {
-      // If it's true, increment the count.
-      count++;
-    }
-  }
+// Create a reference to the players array
+const team = players;
 
-  // Return the final count of read books.
-  return count;
-}
+// Create a copy of the players array using the spread operator
+const team1 = [...players];
 
-// Example usage:
-const library = [
-  {
-    author: "Author 1",
-    title: "Book 1",
-    readingStatus: true,
-  },
-  {
-    author: "Author 2",
-    title: "Book 2",
-    readingStatus: false,
-  },
-  {
-    author: "Author 3",
-    title: "Book 3",
-    readingStatus: true,
-  },
-];
+// Create a copy of the person object using Object.assign()
+const cap1 = Object.assign({}, person);
 
-const numberOfReadBooks = numberOfBooksRead(library);
-console.log(numberOfReadBooks); // Output: 2
+// Testing the modifications on the copied arrays and object
+team.push("Tom");
+team1.push("Jerry");
+cap1.name = "Jane Smith";
+
+console.log("Original players:", players);
+console.log("team:", team);
+console.log("team1:", team1);
+console.log("Original person:", person);
+console.log("cap1:", cap1);
+
